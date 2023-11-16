@@ -89,13 +89,5 @@ typedef struct
 TSelectObj selectArr[ObjListCnt];
 int selectArrCnt = 0;
 
-typedef struct
-{
-    TObject* obj;
-    float dx,dy,dz;
-    int cnt;
-} TAnim;
-
-TAnim animation = {0,0,0,0,0};
 
 #endif // MAIN_H_INCLUDED

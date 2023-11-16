@@ -21,34 +21,6 @@ void Set_PositionObject(TObject* obj)
     obj->z = Map_GetHeight(obj->x, obj->y);
 }
 
-void Anim_Set(TAnim* anm, TObject* obj)
-{
-    if(anm->obj != NULL) return;
-    anm->obj = obj;
-    anm->cnt = 10;
-
-    anm->dx = (camera.x - obj->x) / (float)anm->cnt;
-    anm->dy = (camera.y - obj->y) / (float)anm->cnt;
-    anm->dz = ((camera.z - obj->scale - 0.2) - obj->z) / (float)anm->cnt;
-}
-
-void Anim_Move(TAnim* anm)
-{
-    if (anm->obj != NULL)
-    {
-        anm->obj->x += anm->dx;
-        anm->obj->y += anm->dy;
-        anm->obj->z += anm->dz;
-        anm->cnt--;
-        if (anm->cnt < 1)
-        {
-            Set_PositionObject(anm->obj);
-            anm->obj = NULL;
-        }
-    }
-
-}
-
 void LoadTexture(char *file_name, int *target)
 {
     int width, height, cnt;
@@ -347,8 +319,6 @@ void Game_Show()
         glEnable(GL_TEXTURE_2D);
     }
 
-    Anim_Move(&animation);
-
     glPushMatrix();
 
         if (!selectMode)
@@ -451,7 +421,7 @@ void Player_Take(HWND hwnd)
         for(int i = 0; i < selectArrCnt; i++)
             if(selectArr[i].colorInd == clr[0])
             {
-                Anim_Set(&animation, plantArr + selectArr[i].plantArr_Ind);
+                plantArr[selectArr[i].plantArr_Ind].z = -1000;
             }
 }
 

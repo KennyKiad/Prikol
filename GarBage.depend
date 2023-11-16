@@ -1,0 +1,36 @@
+# depslib dependency file v1.0
+1699987010 source:e:\work\codeblockworks\cameralib\camera.c
+	<GL/gl.h>
+	<windows.h>
+	<math.h>
+	"camera.h"
+
+1699980151 e:\work\codeblockworks\cameralib\camera.h
+
+1700150933 source:e:\work\codeblockworks\garbage\main.c
+	<windows.h>
+	<gl/gl.h>
+	<math.h>
+	"../CameraLib/camera.h"
+	"../StbLib/stb_image.h"
+	"main.h"
+
+1697070720 e:\work\codeblockworks\stblib\stb_image.h
+	"stb_image.h"
+	<stdio.h>
+	<stdlib.h>
+	<stdarg.h>
+	<stddef.h>
+	<stdlib.h>
+	<string.h>
+	<limits.h>
+	<math.h>
+	<stdio.h>
+	<assert.h>
+	<stdint.h>
+	<emmintrin.h>
+	<intrin.h>
+	<arm_neon.h>
+
+1700150934 e:\work\codeblockworks\garbage\main.h
+
